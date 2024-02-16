@@ -23,6 +23,7 @@
         "@workleap/tsup-configs": "3.0.4",
         "@workleap/typescript-configs": "3.0.2",
         "tsup": "8.0.2",
-        "typescript": "5.3.3"
+        "typescript": "5.3.3",
+        "ts-node": "10.9.2"
     }
 }
