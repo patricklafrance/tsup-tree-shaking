@@ -1,0 +1,25 @@
+{
+    "name": "tsup-tree-shaking",
+    "description": "A POC to understand if tsup treeshake option is required for a library compiled by tsup to be treeshakeable.",
+    "private": true,
+    "license": "Apache-2.0",
+    "scripts": {
+        "build-lib": "cd lib && pnpm build",
+        "build-app": "cd app && pnpm build",
+        "clean": "pnpm -r --include-workspace-root --parallel exec pnpm dlx rimraf dist node_modules/.cache",
+        "reset": "pnpm -r --include-workspace-root --parallel exec pnpm dlx rimraf dist node_modules",
+        "list-outdated-deps": "pnpm outdated -r --format list",
+        "update-outdated-deps": "pnpm update -r --latest"
+    },
+    "devDependencies": {
+        "@typescript-eslint/parser": "7.0.1",
+        "@workleap/eslint-plugin": "3.0.2",
+        "@workleap/typescript-configs": "3.0.2",
+        "eslint": "8.56.0",
+        "ts-node": "10.9.2",
+        "typescript": "5.3.3"
+    },
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}

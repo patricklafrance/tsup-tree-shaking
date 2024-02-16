@@ -1,0 +1,28 @@
+{
+    "name": "lib",
+    "version": "0.0.0",
+    "description": "Sample lib.",
+    "private": true,
+    "license": "Apache-2.0",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "build": "tsup --config ./tsup.build.ts"
+    },
+    "files": [
+        "/dist"
+    ],
+    "devDependencies": {
+        "@workleap/eslint-plugin": "3.0.2",
+        "@workleap/tsup-configs": "3.0.4",
+        "@workleap/typescript-configs": "3.0.2",
+        "tsup": "8.0.2",
+        "typescript": "5.3.3"
+    }
+}
