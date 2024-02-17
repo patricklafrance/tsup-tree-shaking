@@ -14,12 +14,19 @@ export default {
     },
     optimization: {
         minimize: true,
-        // minimizer: [new TerserPlugin()]
         minimizer: [new TerserPlugin({
             terserOptions: {
+                toplevel: true,
+                mangle: false,
+                keep_classnames: true,
+                keep_fnames: true,
                 compress: {
-                    unused: true,
-                    dead_code: true
+                    toplevel: true,
+                    hoist_props: false,
+                    pure_funcs: [
+                        "console.log",
+                        "console.warn"
+                    ]
                 }
             }
         })]
