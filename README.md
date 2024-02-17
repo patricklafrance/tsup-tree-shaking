@@ -4,4 +4,6 @@ This POC explore whether or not a library compiled with [tsup](https://tsup.egoi
 
 ## Conclusion
 
-After testing with a super simply library, it turns out that a library is tree-shakeable even if the `treeshake` option is not set to `true`. What really matters is that the `splitting` option is `true`.
+After testing with a super simply library, it turns out that a library is tree-shakeable even if the `treeshake` option is not set to `true`. 
+
+What really matters is that the `splitting` option is `true` if the bundler is not using the [TerserPlugin](https://www.npmjs.com/package/terser-webpack-plugin).

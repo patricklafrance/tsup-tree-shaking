@@ -1,6 +1,7 @@
 // ts-check
 
 import path from "path";
+import TerserPlugin from "terser-webpack-plugin";
 
 /** @type {import("webpack").Configuration} */
 export default {
@@ -12,7 +13,16 @@ export default {
         clean: true
     },
     optimization: {
-        minimize: false
+        minimize: true,
+        // minimizer: [new TerserPlugin()]
+        minimizer: [new TerserPlugin({
+            terserOptions: {
+                compress: {
+                    unused: true,
+                    dead_code: true
+                }
+            }
+        })]
     },
     resolve: {
         extensions: [".js"]
